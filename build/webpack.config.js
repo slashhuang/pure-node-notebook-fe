@@ -8,7 +8,7 @@ var  path= require('path');
 var  AddResolve = (obj)=>{
     var transObj = {};
     for(var key in obj){
-        transObj[key] = path.resolve(process.cwd(),obj[key])
+        transObj[key] = path.resolve(__dirname,'../',obj[key])
     }
     return transObj;
 };
@@ -32,7 +32,7 @@ module.exports =  {
         // debug: true,
         devtool: 'source-map',
         output: {
-            path: path.resolve(process.cwd(),'dist/'),
+            path: path.resolve(__dirname,'../dist/'),
             filename: '[name].js',
             chunkFilename: '[name].min.js',
             publicPath: ''

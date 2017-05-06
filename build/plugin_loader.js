@@ -23,7 +23,7 @@ if(process.env['NODE_ENV']=='prd'){
     exports.plugins.push(
         new WebpackNotifierPlugin({
                 title: 'Webpack 编译成功',
-                contentImage: path.resolve(process.cwd(), './img/avatar.jpeg'),
+                contentImage: path.resolve(__dirname, '../img/avatar.jpeg'),
                 alwaysNotify: true
             })
     )
