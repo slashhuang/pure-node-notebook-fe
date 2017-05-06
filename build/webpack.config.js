@@ -15,7 +15,7 @@ var  AddResolve = (obj)=>{
 //webpack配置文件
 module.exports =  {
         context:path.resolve(__dirname,'../'),
-        watch: true,
+        watch:process.env['NODE_ENV']!='prd',
         entry: {
             index:'./js/index/index.js',
             manage:"./js/manage/index.js",

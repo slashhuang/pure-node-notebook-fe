@@ -9,11 +9,6 @@ exports.plugins =[
             new webpack.ProvidePlugin({
                 $: 'jquery'
             }),
-            new WebpackNotifierPlugin({
-                title: 'Webpack 编译成功',
-                contentImage: path.resolve(process.cwd(), './img/avatar.jpeg'),
-                alwaysNotify: true
-            }),
             new ExtractTextPlugin({
                 filename: "[name].css",
                 disable: false,
@@ -24,7 +19,15 @@ exports.plugins =[
                 minChunks: Infinity
             })
 ];
-
+if(process.env['NODE_ENV']=='prd'){
+    exports.plugins.push(
+        new WebpackNotifierPlugin({
+                title: 'Webpack 编译成功',
+                contentImage: path.resolve(process.cwd(), './img/avatar.jpeg'),
+                alwaysNotify: true
+            })
+    )
+}
 exports.loaders = [
             {
                 test: /\.js[x]?$/,

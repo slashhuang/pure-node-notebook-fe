@@ -5,7 +5,8 @@
   "main": "index.js",
   "author": "slashhuang",
   "scripts": {
-    "start": "rm -rf dist  && webpack --config ./build/webpack.config.js"
+    "start": "rm -rf dist  && webpack --config ./build/webpack.config.js",
+    "build": "NODE_ENV=prod webpack --config ./build/webpack.config.js"
   },
   "keywords": [
     "webpack",
